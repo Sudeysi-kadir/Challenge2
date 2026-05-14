@@ -8,15 +8,15 @@ public class InputHandler
     {
         while (true)
         {
+            System.Console.Write(message);
+            string input = System.Console.ReadLine();
+            if (string.IsNullOrEmpty(input))
+            {
+                System.Console.WriteLine("Input cannot be empty. Please enter a number");
+                continue;
+            }
             if (inputType == InputTypeEnum.Menu)
             {
-                System.Console.Write(message);
-                string input = System.Console.ReadLine();
-                if (string.IsNullOrEmpty(input))
-                {
-                    System.Console.WriteLine("Input cannot be empty.");
-                    continue;
-                }
                 if (!int.TryParse(input, out int choice))
                 {
                     System.Console.WriteLine("Please enter a valid choice.");
@@ -26,13 +26,6 @@ public class InputHandler
             }
             else if (inputType == InputTypeEnum.Number)
             {
-                System.Console.Write(message);
-                string input = System.Console.ReadLine();
-                if (string.IsNullOrEmpty(input))
-                {
-                    System.Console.WriteLine("Input cannot be empty. Please enter a number");
-                    continue;
-                }
                 if (!double.TryParse(input, out double number))
                 {
                     System.Console.WriteLine("Please enter a number");
