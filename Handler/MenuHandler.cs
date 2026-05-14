@@ -42,7 +42,7 @@ public class MenuHandler
                     {
                         result = calculatorLogic.Division(number1, number2);
                     }
-                    catch(DivideByZeroException)
+                    catch(System.DivideByZeroException)
                     {
                         System.Console.WriteLine("Cannot divide by zero.");
                     }
