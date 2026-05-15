@@ -12,7 +12,7 @@ public class InputHandler
             string input = System.Console.ReadLine();
             if (string.IsNullOrEmpty(input))
             {
-                System.Console.WriteLine("Input cannot be empty. Please enter a number");
+                System.Console.WriteLine("Input cannot be empty.");
                 continue;
             }
             if (inputType == InputTypeEnum.Menu)
@@ -28,7 +28,7 @@ public class InputHandler
             {
                 if (!double.TryParse(input, out double number))
                 {
-                    System.Console.WriteLine("Please enter a number");
+                    System.Console.WriteLine("Please enter a number.");
                     continue;
                 }
                 return number;
